@@ -1,0 +1,548 @@
+
+=====================================================================================================================================================================================================================================================================================================================================================================
+//Exercice 1 :
+Ecrire un programme qui saisit deux entiers a et b, calcule et affiche le quotient entier, le reste de la division et le ratio (quotient réel).
+
+Proposition de solution :
+
+VARIABLES
+a, b, quotien, reste, ratio : entier
+DEBUT
+ecrire( “donnez la valeur de a“)
+Lire (a)
+ecrire( “donnez la valeur de b“)
+Lire (b)
+Tant que b==0 
+Ecrire (“cette opération est impossible “)
+Lire(b)
+FinTantQue
+Si (b != 0) alors
+quotien prend a/b
+r prend a%b
+ratio prend (a/b)*100
+écrire (“Le quotien est“, quotient)
+ecrire (“Le reste est“, r)
+ecrire (“Le ratio est“, ratio)
+fin si
+Fin
+=======================================================================================================================
+
+//Exercice 2
+Ecrire un programme qui demande à l’utilisateur de donner le rayon d’un cercle et lui retourne sa surface et son périmètre. 
+PI =  4 * arc tangeante de 1. la fonction arc tangeante est atan ex : atan(2).
+Proposition de solution :
+
+Variables
+rayon ,surface ,périmètre : entier
+DEBUT
+Ecrire(“donnez le rayon“)
+LIRE (rayon)
+Surface = rayon*rayon*4*atan(1)
+périmètre = rayon*8*atan(1)
+Écrire(“la surface est“, surface)
+Écrire(“le périmètre est“, perimetre)
+Fin
+
+=======================================================================================================================
+
+//Exercice 3 :
+Version 1 :
+Faire un programme qui saisit 3 résistances : R1, R2 et R3.
+Calculer et afficher la résistance en série : R1 + R2 +R3
+Calculer et afficher la résistance en parallèle : (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+Proposition de solution :
+Variables 
+  r1, r2, r3, rserie,rparal, entier
+Début
+Écrire(“donner r1 “)
+Lire(r1)
+Écrire(“donner r2“)
+Lire(r2)
+Écrire(“donner r3 “)
+Lire(r3)
+Rserie = R1 + R2 +R3
+Rparal= (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+Écrire(“la résistance en série est“, rserie)
+Écrire(“la résistance en parallèle est“, rparal)
+				======================
+Version 2 :
+Demander a l’utilisateur d’indiquer son choix.
+S’il entre la valeur  1, calculer et afficher la fréquence en série.
+S’il entre la valeur 2, calculer et afficher la fréquence en parallèle.
+
+Proposition de solution :
+FONCTIONS_UTILISEES
+VARIABLES
+  r1 EST_DU_TYPE NOMBRE
+  r2 EST_DU_TYPE NOMBRE
+  r3 EST_DU_TYPE NOMBRE
+  Rserie EST_DU_TYPE NOMBRE
+  Rparallel EST_DU_TYPE NOMBRE
+  choix EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+Ecrire("Donnez r1,r2,r3")
+  LIRE r1
+  LIRE r2
+  LIRE r3
+Ecrire("Choisissez 1 ou 2")
+  LIRE choix
+  TANT_QUE (choix!=1 && choix!=2) FAIRE
+    DEBUT_TANT_QUE
+    ECRIRE ("choisir 1 ou 2")
+    LIRE (choix)
+    FIN_TANT_QUE
+  SI (choix ==1) ALORS
+    DEBUT_SI
+    Rserie PREND_LA_VALEUR r1+r2+r3
+    Ecrire ("la resistance en serie est :  ")
+    lire (Rserie)
+    FIN_SI
+  SI (choix==2) ALORS
+    DEBUT_SI
+    Rparallel PREND_LA_VALEUR (r1*r2*r3)/(r1*r2+r2*r3+r1*r3)
+    Ecrire ("la resistance en paralléle est :  ")
+    Lire (Rparallel)
+    FIN_SI
+FIN_ALGORITHME
+=======================================================================================================================
+Exercice 4
+Ecrire un programme qui saisit un réel x et un entier n et affiche x à la puissance n.
+Version 1 : utiliser la fonction pow  du fichier d’en-tête <math.h>  ex : pow(x,n)
+
+Proposition de slution
+
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+  puissance EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE x
+  LIRE n
+  puissance PREND_LA_VALEUR pow(x,n)
+  Ecrire ("x puissance n est  : ")
+  lire puissance
+FIN_ALGORITHME
+
+           ===================
+Version 2 : en utilisant un boucle
+
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+  puissance EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE n
+  LIRE x
+  puissance PREND_LA_VALEUR 1
+  SI (n==0) ALORS
+    DEBUT_SI
+    puissance PREND_LA_VALEUR 1
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      POUR i ALLANT_DE 1 A n
+        DEBUT_POUR
+        puissance PREND_LA_VALEUR puissance*x
+        FIN_POUR
+      FIN_SINON
+  Ecrire ("La puissance est : ")
+  Lire puissance
+FIN_ALGORITHME
+
+=======================================================================================================================
+
+Exercice 5 :
+Ecrire un programme qui saisit 5 variables de type entier au clavier et qui affiche leur somme. Utiliser une boucle (for ou while ou do..while).
+ 
+Proposition de solution
+VARIABLES
+  Som EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+  nbre EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  Som PREND_LA_VALEUR 0
+  i PREND_LA_VALEUR 1
+  nbre PREND_LA_VALEUR 0
+  POUR i ALLANT_DE 1 A 5
+    DEBUT_POUR
+    LIRE nbre
+    Som PREND_LA_VALEUR Som + nbre
+    FIN_POUR
+  Ecrire ("la somme est : ")
+  Lire (Som)
+FIN_ALGORITHME
+
+=======================================================================================================================
+Exercice 6 :
+Faire un programme qui saisit  les coordonnées de 2 points A (x1, y1) et b(x2, y2) et qui affiche la distance entre les 2 points.
+Formule : distante = racine carrée de ((x1 – x2)2  + (y1 – y2)2)
+
+Proposition de solution:
+
+VARIABLES
+  x1 EST_DU_TYPE NOMBRE
+  x2 EST_DU_TYPE NOMBRE
+  y1 EST_DU_TYPE NOMBRE
+  y2 EST_DU_TYPE NOMBRE
+  Dist EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  Ecrire() "Donnez les coordonnées de A :  ")
+  LIRE x1
+  LIRE y1
+  Ecrire() "Donnez les coordonnées de B : ")
+  LIRE x2
+  LIRE y2
+  Dist PREND_LA_VALEUR sqrt((x1 – x2)2  + (y1 – y2)2)
+  Ecrire ("la distance entre A et B est : ")
+  lire (Dist)
+FIN_ALGORITHME
+
+=======================================================================================================================
+Exercice 7 :  Décomposition d’un montant en euros Écrire un algorithme permettant de décomposer un montant entré au clavier en billets de 20, 10, 5 euros et pièces de 2, 1 euros, de façon à minimiser le nombre de billets et de pièces
+
+Proposition de solution:
+FONCTIONS_UTILISEES
+VARIABLES
+  montant EST_DU_TYPE NOMBRE
+  b20 EST_DU_TYPE NOMBRE
+  b10 EST_DU_TYPE NOMBRE
+  b5 EST_DU_TYPE NOMBRE
+  p2 EST_DU_TYPE NOMBRE
+  p1 EST_DU_TYPE NOMBRE
+  R1 EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  Ecrire ("Donner un montant en euro :")
+  LIRE montant
+  b20 PREND_LA_VALEUR floor(montant/20)
+  R1 PREND_LA_VALEUR floor(montant%20)
+  b10 PREND_LA_VALEUR floor(R1/10)
+  R1 PREND_LA_VALEUR R1%10
+  b5 PREND_LA_VALEUR floor(R1/5)
+  R1 PREND_LA_VALEUR R1%5
+  p2 PREND_LA_VALEUR floor(R1/2)
+  R1 PREND_LA_VALEUR R1%2
+  p1 PREND_LA_VALEUR R1/1
+  Ecrire "le nombre de billet de 20 euros est "
+  Lire (b20)
+  Ecrire ("le nombre de billet de 10 euros est ")
+  AFFICHER* b10
+  Ecrire ("le nombre de billet de 5 euros est ")
+  lire (b5)
+  Ecrire ("le nombre de piéces de 2 euros est ")
+  AFFICHER* p2
+  AFFICHER "le nombre de piéces de 1 euro est "
+  AFFICHER* p1
+FIN_ALGORITHME
+
+=======================================================================================================================
+Exercice 8 : Ecrire un algorithme permettant de résoudre une équation du second degré. 
+Ax2 + bx + c = 0
+
+Prposition de solution
+FONCTIONS_UTILISEES
+VARIABLES
+  A EST_DU_TYPE NOMBRE
+  B EST_DU_TYPE NOMBRE
+  C EST_DU_TYPE NOMBRE
+  discr EST_DU_TYPE NOMBRE
+  x EST_DU_TYPE NOMBRE
+  x1 EST_DU_TYPE NOMBRE
+  x2 EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE A
+  LIRE B
+  LIRE C
+  discr PREND_LA_VALEUR (B*B)-4*A*C
+  Ecrire ("Le discriminant est : ")
+  Lire (discr)
+  SI (A==0 && B==0 && C==0) ALORS
+    DEBUT_SI
+    Ecrire ("Tout reel est solution ")
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (A==0 && B==0) ALORS
+        DEBUT_SI
+        Ecrire ("L'equation n'a pas de solution : ")
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          SI (A==0) ALORS
+            DEBUT_SI
+            x PREND_LA_VALEUR -C/B
+            FIN_SI
+            SINON
+              DEBUT_SINON
+              SI (discr<0) ALORS
+                DEBUT_SI
+                Ecrire( "Pas de solution")
+                FIN_SI
+                SINON
+                  DEBUT_SINON
+                  x1 PREND_LA_VALEUR (-B+sqrt(discr))/(2*A)
+                  x2 PREND_LA_VALEUR (-B-sqrt(discr))/(2*A)
+                  Ecrire "Les solutions sont x1 = "
+                  Lire (x1)
+                  Ecrire ("et x2 =")
+                  Lire (x2)
+                  FIN_SINON
+              FIN_SINON
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME
+
+=======================================================================================================================
+
+Exercice 9 : Ecrire un algorithme qui donne la durée de vol en heure minute connaissant l'heure de départ et l'heure d'arrivée. 
+a. On considère que le départ et l'arrivé ont lieu le même jour 
+
+
+
+VARIABLES
+  HD EST_DU_TYPE NOMBRE
+  MD EST_DU_TYPE NOMBRE
+  HA EST_DU_TYPE NOMBRE
+  MA EST_DU_TYPE NOMBRE
+  DV EST_DU_TYPE NOMBRE
+  DVm EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  Ecrire ("Heure et minute de depart ")
+  LIRE HD
+  LIRE MD
+  Ecrire ("Heure et minute d'arrivé")
+  LIRE HA
+  LIRE MA
+  DV PREND_LA_VALEUR HA-HD
+  DVm PREND_LA_VALEUR MA-MD
+  Ecrire ("La duree du vol est : ")
+  Lire DV
+  Ecrire ("H ")
+  Lire DVm
+  Ecrire (" mn")
+FIN_ALGORITHME
+			==================
+b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir lieu le lendemain. 
+
+=======================================================================================================================
+Exercice 10 : Ecrire un algorithme qui lit trois valeurs entières ( A, B et C) et qui permet de les trier par échanges successifs Et enfin les afficher dans l'ordre 4. 
+
+Proposition de solution
+
+
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  c EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+Ecrire("Donnez A, B, C")
+  LIRE a
+  LIRE b
+  LIRE c
+  SI (a>b && b>c) ALORS
+    DEBUT_SI
+    i PREND_LA_VALEUR a
+    a PREND_LA_VALEUR c
+    c PREND_LA_VALEUR i
+    Ecrire ("L'ordre est : ")
+    Lire a
+    lire b
+    lire c
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (b>a && a>c) ALORS
+        DEBUT_SI
+        i PREND_LA_VALEUR b
+        b PREND_LA_VALEUR c
+        c PREND_LA_VALEUR i
+        Ecrire ("L'ordre est : ")
+        lire b
+        lire a
+        lire c
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          SI (c>b && b>a) ALORS
+            DEBUT_SI
+            i PREND_LA_VALEUR c
+            c PREND_LA_VALEUR a
+            a PREND_LA_VALEUR i
+            Ecrire ("L'ordre est ")
+            lire c
+            lire b
+            lire a
+            FIN_SI
+            SINON
+              DEBUT_SINON
+              SI (c>a && a>b) ALORS
+                DEBUT_SI
+                i PREND_LA_VALEUR c
+                c PREND_LA_VALEUR b
+                b PREND_LA_VALEUR i
+                Ecrire ("L'ordre est : ")
+                lire c
+                lire a
+                lire b
+                FIN_SI
+                SINON
+                  DEBUT_SINON
+                  SI (a>c && c>b) ALORS
+                    DEBUT_SI
+                    i PREND_LA_VALEUR a
+                    a PREND_LA_VALEUR b
+                    b PREND_LA_VALEUR i
+                    Ecrire "L'ordre est : "
+                    lire a
+                    lire c
+                    lire b
+                    FIN_SI
+                    SINON
+                      DEBUT_SINON
+                      SI (b>c && c>a) ALORS
+                        DEBUT_SI
+                        i PREND_LA_VALEUR b
+                        b PREND_LA_VALEUR a
+                        a PREND_LA_VALEUR i
+                        Ecrire ("L'ordre est : ")
+                        lire b
+                        lire c
+                        lire a
+                        FIN_SI
+                      FIN_SINON
+                  FIN_SINON
+              FIN_SINON
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME
+
+=======================================================================================================================
+
+Exercice 11 : Ecrire un algorithme calculatrice permettant la saisie du premier entier (a) de l'opération ( + ou – ou * ou / : sont des caractères) et du deuxième entier (b) et qui affiche le résultat
+
+Proposition de solution
+FONCTIONS_UTILISEES
+VARIABLES
+  E1 EST_DU_TYPE NOMBRE
+  E2 EST_DU_TYPE NOMBRE
+  Operateur EST_DU_TYPE CHAINE
+  result EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "Donner les entiers : "
+  LIRE E1
+  LIRE Operateur
+  LIRE E2
+  SI (Operateur == "+") ALORS
+    DEBUT_SI
+    result PREND_LA_VALEUR E1+E2
+    AFFICHER "le resultat est : "
+    AFFICHER result
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (Operateur =="-") ALORS
+        DEBUT_SI
+        result PREND_LA_VALEUR E1-E2
+        AFFICHER "le resultat est : "
+        AFFICHER result
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          SI (Operateur =="*") ALORS
+            DEBUT_SI
+            result PREND_LA_VALEUR E1*E2
+            AFFICHER "Le resultat est : "
+            AFFICHER result
+            FIN_SI
+            SINON
+              DEBUT_SINON
+              SI (Operateur =="/") ALORS
+                DEBUT_SI
+                result PREND_LA_VALEUR E1/E2
+                AFFICHER "Le resultat est : "
+                AFFICHER result
+                FIN_SI
+              FIN_SINON
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME
+
+=======================================================================================================================
+Exercice 12 : Un nombre est parfait s’il est égal à la somme de ses diviseurs stricts (différents de lui-même). Ainsi par exemple, l’entier 6 est parfait car 6 = 1 + 2 + 3. Écrire un algorithme permettant de déterminer si un entier naturel est un nombre parfait.
+
+VARIABLES
+  n EST_DU_TYPE NOMBRE
+  p EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE n
+  p PREND_LA_VALEUR 0
+  POUR i ALLANT_DE 1 A n/2
+    DEBUT_POUR
+    SI (n%i==0) ALORS
+      DEBUT_SI
+      p PREND_LA_VALEUR p+i
+      FIN_SI
+    FIN_POUR
+  SI (n==p) ALORS
+    DEBUT_SI
+    AFFICHER "le nombre est parfait"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER "le nombre n'est pas parfait"
+      FIN_SINON
+FIN_ALGORITHME
+
+
+=======================================================================================================================
+Exercice 13 : Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
+
+FONCTIONS_UTILISEES
+VARIABLES
+  jour EST_DU_TYPE NOMBRE
+  année EST_DU_TYPE NOMBRE
+  mois EST_DU_TYPE CHAINE
+DEBUT_ALGORITHME
+  LIRE jour
+  LIRE mois
+  LIRE année
+  SI ((mois =="janvier" || "mars" || "mai"|| "juillet"||"aout"||"octobre"||"decembre") ) ALORS
+    DEBUT_SI
+    SI ( jour>=1 && jour<=31) ALORS
+      DEBUT_SI
+      AFFICHER "Date valide"
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        AFFICHER "Date invalide"
+        FIN_SINON
+    FIN_SI
+  SI (mois =="avril" || "juin"|| "septembre"|| "novembre") ALORS
+    DEBUT_SI
+    SI (jour>=1 && jour<=30) ALORS
+      DEBUT_SI
+      AFFICHER "Date valide"
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        AFFICHER "Date invalide"
+        FIN_SINON
+    FIN_SI
+  SI (mois=="fevrier") ALORS
+    DEBUT_SI
+    SI (jour>=1 && jour<=29) ALORS
+      DEBUT_SI
+      AFFICHER "Date valide"
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        AFFICHER "Date invalide"
+        FIN_SINON
+    FIN_SI
+FIN_ALGORITHME
+
+=======================================================================================================================
+=======================================================================================================================
+=======================================================================================================================
