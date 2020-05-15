@@ -1,4 +1,5 @@
 
+												TD1-ALGORITHME(Samba DIAW)
 =====================================================================================================================================================================================================================================================================================================================================================================
 //Exercice 1 :
 Ecrire un programme qui saisit deux entiers a et b, calcule et affiche le quotient entier, le reste de la division et le ratio (quotient réel).
@@ -544,5 +545,284 @@ DEBUT_ALGORITHME
 FIN_ALGORITHME
 
 =======================================================================================================================
+Exercice 14
+VARIABLES
+  jour EST_DU_TYPE NOMBRE
+  an EST_DU_TYPE NOMBRE
+  mois EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE jour
+  LIRE mois
+  LIRE an
+  SI (an%4==0 && an%100==0 && an %400==0) ALORS
+    DEBUT_SI
+    AFFICHER "L'annee est bisextile "
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER "l'annee n'est pas bisextile"
+      FIN_SINON
+  
+FIN_ALGORITHME
+
 =======================================================================================================================
+Exercice 15
+FONCTIONS_UTILISEES
+VARIABLES
+  nbre EST_DU_TYPE NOMBRE
+  som EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+  moy EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  som PREND_LA_VALEUR 0
+  LIRE nbre
+  POUR i ALLANT_DE 1 A nbre
+    DEBUT_POUR
+    som PREND_LA_VALEUR som+i
+    moy PREND_LA_VALEUR (som)/nbre
+    FIN_POUR
+  AFFICHER "la somme est "
+  AFFICHER som
+  AFFICHER "La moyenne est : "
+  AFFICHER moy
+FIN_ALGORITHME
 =======================================================================================================================
+Exercice 16
+FONCTIONS_UTILISEES
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  q EST_DU_TYPE NOMBRE
+
+  DEBUT_ALGORITHME
+    Ecrire("donnez a ");
+    Lire("a"),
+    Ecrire("donnez b");
+    Lire("b")
+    tant que(a>=b)
+    debut tant que:
+        a=a-b;
+        q=q++;
+    fintantque
+    Ecrire("La division est :",q);
+FIN_ALGORITHME
+=======================================================================================================================
+Exercice 17 :
+
+FONCTIONS_UTILISEES
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE a
+  LIRE b
+  TANT_QUE (a>b) FAIRE
+    DEBUT_TANT_QUE
+    a PREND_LA_VALEUR a-b
+    SI (a=b) ALORS
+      DEBUT_SI
+      AFFICHER "le pgcd est "
+      AFFICHER a
+      FIN_SI
+    FIN_TANT_QUE
+  TANT_QUE (a<b) FAIRE
+    DEBUT_TANT_QUE
+    b PREND_LA_VALEUR b-a
+    SI (a=b) ALORS
+      DEBUT_SI
+      AFFICHER "le pgcd est "
+      AFFICHER a
+      FIN_SI
+    FIN_TANT_QUE
+FIN_ALGORITHME
+
+=======================================================================================================================
+Exercice 18:
+
+FONCTIONS_UTILISEES
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  c EST_DU_TYPE NOMBRE
+  d EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE a
+  LIRE b
+  c PREND_LA_VALEUR a
+  d PREND_LA_VALEUR b
+  TANT_QUE (a!=b) FAIRE
+    DEBUT_TANT_QUE
+    SI (a>b) ALORS
+      DEBUT_SI
+      b PREND_LA_VALEUR b+d
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        SI (a<b) ALORS
+          DEBUT_SI
+          a PREND_LA_VALEUR a+c
+          FIN_SI
+        FIN_SINON
+    FIN_TANT_QUE
+  AFFICHER "le ppcm est "
+  AFFICHER b
+FIN_ALGORITHME
+
+=======================================================================================================================
+Exercice 19:
+
+FONCTIONS_UTILISEES
+VARIABLES
+  som EST_DU_TYPE NOMBRE
+  nbre EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE nbre
+  som PREND_LA_VALEUR 0
+  TANT_QUE (nbre!=0) FAIRE
+    DEBUT_TANT_QUE
+    LIRE nbre
+    som PREND_LA_VALEUR som+nbre
+    FIN_TANT_QUE
+  AFFICHER "La somme est : "
+  AFFICHER som
+FIN_ALGORITHME
+
+=======================================================================================================================
+Exercice 20:
+
+FONCTIONS_UTILISEES
+VARIABLES
+  nbre EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+  sup EST_DU_TYPE NOMBRE
+  rang EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE nbre
+  sup PREND_LA_VALEUR nbre
+  i PREND_LA_VALEUR 1
+  POUR rang ALLANT_DE 1 A 10
+    DEBUT_POUR
+    LIRE nbre
+    SI (nbre>sup) ALORS
+      DEBUT_SI
+      sup PREND_LA_VALEUR nbre
+      i PREND_LA_VALEUR rang
+      FIN_SI
+    FIN_POUR
+  AFFICHER "le plus grand est "
+  AFFICHER sup
+  AFFICHER " il occupe l'indice "
+  AFFICHER i
+FIN_ALGORITHME
+
+=======================================================================================================================
+Exercice 21:
+
+FONCTIONS_UTILISEES
+VARIABLES
+  nbre EST_DU_TYPE NOMBRE
+  ess EST_DU_TYPE NOMBRE
+  nbrtentative EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE nbre
+  LIRE ess
+  nbrtentative PREND_LA_VALEUR 0
+  TANT_QUE (nbre!=ess) FAIRE
+    DEBUT_TANT_QUE
+    SI (nbre>ess) ALORS
+      DEBUT_SI
+      AFFICHER "le nombre est plus grand "
+      LIRE ess
+      nbrtentative PREND_LA_VALEUR nbrtentative+1
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        SI (nbre<ess) ALORS
+          DEBUT_SI
+          AFFICHER "le nombre est plus petit "
+          LIRE ess
+          nbrtentative PREND_LA_VALEUR nbrtentative+1
+          FIN_SI
+        FIN_SINON
+    FIN_TANT_QUE
+  AFFICHER "vou avez trouvé le nombre caché  en "
+  AFFICHER nbrtentative
+  AFFICHER " tentatives"
+FIN_ALGORITHME
+==================================================================================================================================
+Exercice 24
+
+FONCTIONS_UTILISEES
+VARIABLES
+  nbre EST_DU_TYPE NOMBRE
+  ess EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE nbre
+  LIRE ess
+  TANT_QUE (nbre!=ess) FAIRE
+    DEBUT_TANT_QUE
+    SI (nbre>ess) ALORS
+      DEBUT_SI
+      AFFICHER "le nombre est plus grand "
+      LIRE ess
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        SI (nbre<ess) ALORS
+          DEBUT_SI
+          AFFICHER "le nombre est plus petit "
+          LIRE ess
+          FIN_SI
+        FIN_SINON
+    FIN_TANT_QUE
+  AFFICHER "vou avez trouvé le nombre caché "
+FIN_ALGORITHME
+
+==================================================================================================================================
+Exercice 25
+
+
+FONCTIONS_UTILISEES
+VARIABLES
+  i EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  POUR i ALLANT_DE 1 A 10
+    DEBUT_POUR
+    POUR n ALLANT_DE 1 A i
+      DEBUT_POUR
+      AFFICHER* i
+      FIN_POUR
+    FIN_POUR
+FIN_ALGORITHME
+===================================================================================================================================
+
+Exercice 26
+
+VARIABLES
+T: tableau[1,nbre] de reel
+nbre,val, i, j: entiers
+DEBUT_ALGORITHME
+	Ecrire ("donner le nombe d`element")
+	lire(nbre)
+	POUR i ALLANT_DE 1 A nbre
+		DEBUT_POUR
+	Ecrire	"(donner une valeur")
+	LIRE val
+		FIN_POUR
+		POUR i ALLANT_DE 1 A nbre
+			DEBUT_POUR
+			SI (t[i]>t[i+1]) ALORS
+				DEBUT_SI
+							Ecrire("l'ordre est decroissant")
+				FIN_SI
+				SINON SI ((t[i]<t[i+1])) ALORS
+						DEBUT_SINON
+							Ecrire("l'ordre est croissant")
+						FIN_SINON
+					FIN_SI
+			FIN_POUR
+		
+FIN_ALGORITHME
+
+========================================
